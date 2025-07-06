@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import AgentCard from "@/components/AgentCard";
+import AgentsPage from "@/components/AgentsPage";
 
 export interface Agent {
   id: string;
@@ -21,10 +21,8 @@ const Home = async () => {
   const agents = await fetchDataOnServer();
   console.log(agents);
   return (
-    <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {agents.map((agent) => (
-        <AgentCard key={agent.id} agent={agent} />
-      ))}
+    <div className="p-4">
+      <AgentsPage agents={agents} />
     </div>
   );
 };

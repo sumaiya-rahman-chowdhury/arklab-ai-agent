@@ -19,7 +19,7 @@ const agentSlice = createSlice({
       state.allAgents = action.payload;
       state.filteredAgents = action.payload;
     },
-    filteredAgents: (
+    filterAgents: (
       state,
       action: PayloadAction<{
         search: string;
@@ -50,5 +50,5 @@ const agentSlice = createSlice({
     },
   },
 });
-export const { setAgents, filteredAgents, clearFilters } = agentSlice.actions;
+export const { setAgents, filterAgents, clearFilters } = agentSlice.actions;
 export default agentSlice.reducer;
