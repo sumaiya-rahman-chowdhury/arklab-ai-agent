@@ -11,6 +11,7 @@ export interface Agent {
   pricingModel: string;
 }
 const fetchDataOnServer = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const filePath = path.join(process.cwd(), "lib", "mock-agents.json");
   const fileContents = fs.readFileSync(filePath, "utf-8");
   const agents: Agent[] = JSON.parse(fileContents);
