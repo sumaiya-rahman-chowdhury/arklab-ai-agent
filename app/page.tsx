@@ -2,6 +2,9 @@ import path from "path";
 import fs from "fs";
 import AgentsPage from "@/components/AgentsPage";
 
+export const metadata = {
+  title: "ArkLab AI Agents Catalog",
+};
 export interface Agent {
   id: string;
   name: string;

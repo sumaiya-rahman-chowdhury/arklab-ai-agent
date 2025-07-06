@@ -51,7 +51,7 @@ export default function FilterPanel() {
             />
             <label
               htmlFor={status}
-              className="text-sm font-medium leading-none"
+              className="text-sm  leading-none"
             >
               {status}
             </label>
@@ -67,7 +67,7 @@ export default function FilterPanel() {
               checked={filter.categories.includes(cat)}
               onCheckedChange={() => dispatch(toggleCategory(cat))}
             />
-            <label htmlFor={cat} className="text-sm font-medium leading-none">
+            <label htmlFor={cat} className="text-sm  leading-none">
               {cat}
             </label>
           </div>
@@ -80,6 +80,7 @@ export default function FilterPanel() {
           <label key={price} className="mr-2">
             <Checkbox
               id={price}
+              className="mr-2"
               name="pricing"
               checked={filter.pricing === price}
               onCheckedChange={() => dispatch(setPricing(price))}
