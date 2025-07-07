@@ -26,7 +26,7 @@ function AgentsPage({ agents }: { agents: Agent[] }) {
   return (
     <div>
       <div className="p-4 grid grid-cols-1 md:grid-cols-12 gap-5 ">
-        <div className="col-span-12 md:col-span-3 shadow p-5 md:h-screen rounded-lg ">
+        <div className="col-span-12 md:col-span-3 shadow p-5 md:h-auto md:max-h-[700px] lg:h-screen rounded-lg ">
           <FilterPanel />
         </div>
         <div className="col-span-12 md:col-span-9">
