@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function Navbar() {
   const { data: session } = useSession();
   const dispatch = useDispatch();
-
+  console.log(session);
   useEffect(() => {
     if (session) {
       dispatch(
@@ -34,13 +34,9 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {session ? (
             <>
-              <Image
-                width={32}
-                height={32}
-                src={session.user?.image ?? ""}
-                alt="profile"
-                className="w-8 h-8 rounded-full"
-              />
+              <div className="relative w-8 h-8 rounded-full">
+                <Image fill src={session.user?.image ?? ""} alt="profile" />
+              </div>
               <span className="text-sm">{session.user?.name}</span>
               <Button
                 onClick={() => {
