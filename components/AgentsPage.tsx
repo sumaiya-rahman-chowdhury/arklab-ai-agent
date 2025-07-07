@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AgentCard from "./AgentCard";
 import FilterPanel from "./FilterPanel";
-import { Badge } from "./ui/badge";
 import Filters from "./Filters";
 
 function AgentsPage({ agents }: { agents: Agent[] }) {
@@ -17,11 +16,11 @@ function AgentsPage({ agents }: { agents: Agent[] }) {
   const filters = useSelector((state: RootState) => state.filter);
   useEffect(() => {
     dispatch(setAgents(agents));
-  }, [agents]);
+  }, [agents,dispatch]);
 
   useEffect(() => {
     dispatch(filterAgents(filters));
-  }, [filters]);
+  }, [filters,dispatch]);
 
   return (
     <div>

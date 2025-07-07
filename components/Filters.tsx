@@ -25,7 +25,7 @@ function Filters() {
 
           {filters.search && (
             <Badge variant="outline" className="capitalize">
-              "{filters.search}"
+              {filters.search}
             </Badge>
           )}
 

@@ -10,13 +10,13 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ profile }) {
       if (!profile?.email) {
         throw new Error("Email is required for sign-in");
       }
       return true;
     },
-    async session({ session, token }) {
+    async session({ session }) {
       return session;
     },
   },

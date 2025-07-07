@@ -6,9 +6,10 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setUser, clearUser } from "@/redux/features/slices/userSlice";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function Navbar() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,9 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {session ? (
             <>
-              <img
+              <Image
+                width={32}
+                height={32}
                 src={session.user?.image ?? ""}
                 alt="profile"
                 className="w-8 h-8 rounded-full"
